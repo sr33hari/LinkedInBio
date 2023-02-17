@@ -81,7 +81,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
-        <title>LinkedIn Generator</title>
+        <title>LinkedIn Bio Generator</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -99,6 +99,11 @@ const Home: NextPage = () => {
         <h1 className="sm:text-6xl text-4xl max-w-2xl font-bold text-slate-900">
           Generate your next LinkedIn bio in seconds
         </h1>
+        <style jsx>{`
+        p {
+          color: #0072b1;
+        }
+      `}</style>
         {/* <p className="text-slate-500 mt-5">18,167 bios generated so far.</p> */}
         <div className="max-w-xl w-full">
           <div className="flex mt-10 items-center space-x-3">
@@ -121,7 +126,7 @@ const Home: NextPage = () => {
             value={bio}
             onChange={(e) => setBio(e.target.value)}
             rows={4}
-            className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
+            className="w-full rounded-md border-gray-300 shadow-sm focus:border-blue focus:ring-blue my-5"
             placeholder={
               "Graduate student at San Jose State University interested in full stack web development and cloud computing technologies with over 2 years of industry experience."
             }
@@ -136,7 +141,7 @@ const Home: NextPage = () => {
 
           {!loading && (
             <button
-              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
+              className="bg-blue rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-blue/80 w-full"
               onClick={(e) => generateBio(e)}
             >
               Generate your bio &rarr;
@@ -144,7 +149,7 @@ const Home: NextPage = () => {
           )}
           {loading && (
             <button
-              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
+              className="bg-blue rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-blue/80 w-full"
               disabled
             >
               <LoadingDots color="white" style="large" />
